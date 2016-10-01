@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <title>Craftventure Studio</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
+
+    <link rel="stylesheet" href="styles/editor.css">
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <script src="scripts/bower_components/gsap/src/uncompressed/TweenMax.js"></script>
+    <script src="scripts/bower_components/gsap/src/uncompressed/TimelineMax.js"></script>
+    <script src="scripts/bower_components/js-signals/dist/signals.js"></script>
+
+    <!-- Editor dependencies -->
+    <script src="scripts/bower_components/jquery/dist/jquery.js"></script>
+    <script src="scripts/bower_components/spectrum/spectrum.js"></script>
+    <script src="scripts/bower_components/d3/d3.js"></script>
+    <script src="scripts/bower_components/lodash/lodash.js"></script>
+    <script src="scripts/bower_components/draggable-number.js/dist/draggable-number.js"></script>
+    <script src="scripts/bower_components/file-saver/FileSaver.js"></script>
+
+    <!-- TweenTime & Editor -->
+    <script src="scripts/TweenTime.Core.min.js"></script>
+    <script src="scripts/TweenTime.Editor.min.js"></script>
+
+    <script src="//code.jquery.com/jquery-3.1.0.slim.min.js"></script>
+    <script src="js/three.js"></script>
+    <script src="js/OBJLoader.js"></script>
+    <script src="js/MTLLoader.js"></script>
+    <script src="js/THREEx.KeyboardState.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+<div id="jsoneditor">
+
+</div>
+<div class="content-wrapper">
+    <div id="content">
+        <div id="topbar">
+            <button id="savefile">Save</button>
+            <button id="centercam">Center camera</button>
+            <button id="createcontroller">Create controller</button>
+            <button id="loadcontroller" onclick="$('#loadcontroller_input').click()">Load controller</button>
+            <input class="hidden" type="file" id="loadcontroller_input" multiple/>
+            <button id="removecontroller">Remove controller</button>
+            <button id="loadmodel" onclick="$('#loadmodel_input').click()">Add enviroment</button>
+            <input class="hidden" type="file" id="loadmodel_input" multiple/>
+            <button id="teleport">Teleport</button>
+            <button id="conectserver">Connect with server</button>
+        </div>
+        <div id="main_renderer"></div>
+    </div>
+</div>
+</body>
+</html>
