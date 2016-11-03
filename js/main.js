@@ -125,9 +125,9 @@ function saveFile() {
                 f--;
             }
         }
-        console.log(datas);
+        // console.log(datas);
         for (var d = 0; d < datas.length; d++) {
-            console.log(datas[d]);
+            // console.log(datas[d]);
             if (datas[d].label == controller.filename + " (" + controller.id + ")") {
                 var data = datas[d];
                 json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "posX", 1));
@@ -160,7 +160,7 @@ function saveFile() {
             }
         }
         // console.log(json);
-        download(JSON.stringify(json, null, 2), controllers[i].filename, "text/plain");
+        download(JSON.stringify(json, null, 2), controllers[i].getFilename(), "application/json");
     }
 }
 
@@ -182,7 +182,7 @@ function removeActor(id) {
 
             var timelineData = [];
             for (var i = 0; i < controllers.length; i++) {
-                timelineData.push(JSON.parse(JSON.stringify(controllers[i].getTimelineData())));
+                timelineData.push(controllers[i].getTimelineData(tweentimeEditor));
             }
 
             tweentimeCore = new TweenTime.Core(timelineData, tweentimeCoreOptions);
@@ -263,7 +263,7 @@ function createActor(event) {
             }
         ]
     };
-    addJsonActor(jsonContents, "actor" + id);
+    addJsonActor(jsonContents, "actor" + id + ".json");
 }
 
 function addJsonActor(jsonContents, name) {
@@ -273,20 +273,20 @@ function addJsonActor(jsonContents, name) {
     });
     var timelineData = [];
     // console.log(jsonContents);
+    console.log(tweentimeEditor);
     for (var i = 0; i < controllers.length; i++) {
         // console.group();
         // console.log(controllers[i].getTimelineData());
         // console.log(JSON.parse(JSON.stringify(controllers[i].getTimelineData())));
         // console.groupEnd();
-        timelineData.push(JSON.parse(JSON.stringify(controllers[i].getTimelineData())));
+        timelineData.push(controllers[i].getTimelineData(tweentimeEditor));
     }
     // console.log(timelineData);
     var armorStand = new ArmorStand(scene);
     var controller = new ArmorStandController(armorStand);
     var loader = new JsonDataFactory(jsonContents, controller, name);
-    controller.setTimelineData(loader.getTimelineData());
     controller.setFilename(name);
-    timelineData.push(JSON.parse(JSON.stringify(controller.getTimelineData())));
+    timelineData.push(loader.getLoadedTimelineData());
     controllers.push(controller);
 
     tweentimeCore = new TweenTime.Core(timelineData, tweentimeCoreOptions);
@@ -529,7 +529,7 @@ class JsonDataFactory {
         data.type = "armorstand";
         data.label = fileName + " (" + data.id + ")";
         data.properties = [];
-        console.log(this.frames);
+        // console.log(this.frames);
         JsonDataFactory.generateProperty(data, "posX", this.frames[1], "value");
         JsonDataFactory.generateProperty(data, "posY", this.frames[2], "value");
         JsonDataFactory.generateProperty(data, "posZ", this.frames[3], "value");
@@ -559,11 +559,11 @@ class JsonDataFactory {
         JsonDataFactory.generateProperty(data, "headX", this.frames[21], "value");
         JsonDataFactory.generateProperty(data, "headY", this.frames[22], "value");
         JsonDataFactory.generateProperty(data, "headZ", this.frames[23], "value");
-        console.log(data);
+        // console.log(data);
         this.timelineData = data;
     }
 
-    getTimelineData() {
+    getLoadedTimelineData() {
         return this.timelineData;
     }
 
@@ -597,11 +597,26 @@ class NpcController {
         this.values = null;
         this.originalJson = null;
         this.id = "as" + (id++);
-        this.timelineData = null;
+        this.filename = null;
     }
 
-    getTimelineData() {
-        return this.timelineData;
+    getTimelineData(tweentimeEditor) {
+        if (tweentimeEditor != null) {
+            var editorData = JSON.parse(tweentimeEditor.exporter.getJSON());
+            var datas = editorData.data;
+            for (var i = 0; i < datas.length; i++) {
+                if (datas[i].id.localeCompare(this.id) == 0) {
+                    return JSON.parse(JSON.stringify(datas[i]));
+                } else {
+                    // console.log(datas[i].id + " vs " + this.id + " > " + (datas[i].id.localeCompare(this.id)));
+                }
+            }
+            console.log("Datas checked for " + this.id);
+            console.log(JSON.parse(JSON.stringify(editorData.data)));
+        }
+        console.log("Failed to get timeline");
+        console.trace();
+        return null;
     }
 
     setFilename(filename) {
@@ -610,10 +625,6 @@ class NpcController {
 
     getFilename() {
         return this.filename;
-    }
-
-    setTimelineData(timelineData) {
-        this.timelineData = timelineData;
     }
 
     updateValues(tweentimeCore) {
