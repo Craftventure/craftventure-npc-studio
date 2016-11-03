@@ -273,7 +273,7 @@ function addJsonActor(jsonContents, name) {
     });
     var timelineData = [];
     // console.log(jsonContents);
-    console.log(tweentimeEditor);
+    // console.log(tweentimeEditor);
     for (var i = 0; i < controllers.length; i++) {
         // console.group();
         // console.log(controllers[i].getTimelineData());
@@ -302,13 +302,16 @@ function addJsonActor(jsonContents, name) {
 
 function loadActor(event) {
     for (var i = 0; i < event.target.files.length; i++) {
-        var jsonReader = new FileReader();
-        var file = event.target.files[i];
-        jsonReader.onload = function (e) {
-            var jsonContents = e.target.result;
-            addJsonActor(JSON.parse(jsonContents), file.name);
-        };
-        jsonReader.readAsText(event.target.files[i]);
+        (function () {
+            var jsonReader = new FileReader();
+            var file = event.target.files[i];
+            jsonReader.onload = function (e) {
+                var jsonContents = e.target.result;
+                // console.log(file.name);
+                addJsonActor(JSON.parse(jsonContents), file.name);
+            };
+            jsonReader.readAsText(event.target.files[i]);
+        })();
     }
 }
 
@@ -522,6 +525,32 @@ class JsonDataFactory {
                 frames.push(frame);
                 this.frames[data.type] = frames;
             }
+        }
+
+        for (var key in this.frames) {
+            var frames = this.frames[key];
+            frames.sort(function (a, b) {
+                return a.time - b.time;
+            });
+            for (var i = 0; i < frames.length - 2; i++) {
+                var frame = frames[i];
+                var midFrame = frames[i + 1];
+                var lastFrame = frames[i + 2];
+                if (frame.data.value == midFrame.data.value && frame.data.value == lastFrame.data.value) {
+                    // console.log("Removed " + i + " frame for " + key);
+                    frames.splice(i + 1, 1);
+                    i--;
+                }
+            }
+            // if (frames.length == 2) {
+            //     if (frames[0].time == frames[1].time) {
+            //         frames = frames.splice(1, 1);
+            //         console.log("Removed frame for " + key);
+            //     }
+            // }
+
+            this.frames[key] = frames;
+            // console.log(frames);
         }
 
         var data = {};
