@@ -74,48 +74,30 @@ function isNumber(o) {
     return !isNaN(o - 0) && o !== null && o !== "" && o !== false;
 }
 
-function makeFrames(data, propertyMap, type, staticDataValues, controllerValues) {
+function makeSingleDoubleFrame(sourceFrame, property, type) {
+    var frame = {};
+    frame.time = sourceFrame.time;
+    frame.type = 8;
+    frame.data = {};
+    frame.data.type = type;
+    frame.data.value = sourceFrame.data[property];
+    return frame;
+}
+
+function makeDoubleFrames(data, propertyName, typeValue) {
     var frames = [];
-    for (var pm = 0; pm < propertyMap.length; pm++) {
-        var property = propertyMap[pm];
-        var propertyName = property[0];
-        var propertyJsonName = property[1];
-        for (var p = 0; p < data.properties.length; p++) {
-            var dataProperty = data.properties[p];
-            if (dataProperty.name == propertyName) {
-                for (var k = 0; k < dataProperty.keys.length; k++) {
-                    var key = dataProperty.keys[k];
-                    var frame = null;
-                    for (var f = 0; f < frames.length; f++) {
-                        if (frames[f].time == key.time * 1000) {
-                            frame = frames[f];
-                            frames.splice(f, 1);
-                            break;
-                        }
-                    }
-                    if (frame == null) {
-                        frame = {};
-                        frame.time = key.time * 1000;
-                        frame.type = type;
-                        frame.data = {};
-                        tweentimeCore.timer.seek([frame.time]);
-                        tweentimeCore.timer.update();
-                        tweentimeCore.orchestrator.update();
-
-                        for (var pm2 = 0; pm2 < propertyMap.length; pm2++) {
-                            frame.data[propertyMap[pm2][1]] = controllerValues[propertyMap[pm2][0]];
-                        }
-
-                        for (var sdv = 0; sdv < staticDataValues.length; sdv++) {
-                            var staticDataValue = staticDataValues[sdv];
-                            frame.data[staticDataValue[0]] = staticDataValue[1];
-                        }
-                    }
-                    frame.data[propertyJsonName] = key.val;
-                    frames.push(frame);
-
-                }
-                // console.log(dataProperty);
+    for (var p = 0; p < data.properties.length; p++) {
+        var dataProperty = data.properties[p];
+        if (dataProperty.name == propertyName) {
+            for (var k = 0; k < dataProperty.keys.length; k++) {
+                var key = dataProperty.keys[k];
+                var frame = {};
+                frame.time = key.time * 1000;
+                frame.type = 8;
+                frame.data = {};
+                frame.data.type = typeValue;
+                frame.data.value = key.val;
+                frames.push(frame);
             }
         }
     }
@@ -135,7 +117,7 @@ function saveFile() {
                 if (frame.type >= 1 && frame.type <= 6) {
                     remove = true;
                 }
-            } else if (frame.type == 6) {
+            } else if (frame.type == 6 || (frame.type >= 8 && frame.type <= 12)) {
                 remove = true;
             }
             if (remove) {
@@ -143,94 +125,41 @@ function saveFile() {
                 f--;
             }
         }
-        // console.log(datas);
+        console.log(datas);
         for (var d = 0; d < datas.length; d++) {
-            // console.log(datas[d]);
+            console.log(datas[d]);
             if (datas[d].label == controller.filename + " (" + controller.id + ")") {
                 var data = datas[d];
-                json.frame_list = json.frame_list.concat(makeFrames(data,
-                    [
-                        ["posX", "x"],
-                        ["posY", "y"],
-                        ["posZ", "z"],
-                        ["posYaw", "yaw"],
-                        ["posPitch", "pitch"]
-                    ],
-                    6,
-                    [
-                        ["is_teleport", true]
-                    ],
-                    controller.values));
-                json.frame_list = json.frame_list.concat(makeFrames(data,
-                    [
-                        ["leftArmX", "x"],
-                        ["leftArmY", "y"],
-                        ["leftArmZ", "z"]
-                    ],
-                    4,
-                    [
-                        ["type", 1]
-                    ],
-                    controller.values));
-                json.frame_list = json.frame_list.concat(makeFrames(data,
-                    [
-                        ["rightArmX", "x"],
-                        ["rightArmY", "y"],
-                        ["rightArmZ", "z"]
-                    ],
-                    4,
-                    [
-                        ["type", 2]
-                    ],
-                    controller.values));
-                json.frame_list = json.frame_list.concat(makeFrames(data,
-                    [
-                        ["leftLegX", "x"],
-                        ["leftLegY", "y"],
-                        ["leftLegZ", "z"]
-                    ],
-                    4,
-                    [
-                        ["type", 3]
-                    ],
-                    controller.values));
-                json.frame_list = json.frame_list.concat(makeFrames(data,
-                    [
-                        ["rightLegX", "x"],
-                        ["rightLegY", "y"],
-                        ["rightLegZ", "z"]
-                    ],
-                    4,
-                    [
-                        ["type", 4]
-                    ],
-                    controller.values));
-                json.frame_list = json.frame_list.concat(makeFrames(data,
-                    [
-                        ["bodyX", "x"],
-                        ["bodyY", "y"],
-                        ["bodyZ", "z"]
-                    ],
-                    4,
-                    [
-                        ["type", 5]
-                    ],
-                    controller.values));
-                json.frame_list = json.frame_list.concat(makeFrames(data,
-                    [
-                        ["headX", "x"],
-                        ["headY", "y"],
-                        ["headZ", "z"]
-                    ],
-                    4,
-                    [
-                        ["type", 6]
-                    ],
-                    controller.values));
-                // console.log(data);
+                json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "posX", 1));
+                json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "posY", 2));
+                json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "posZ", 3));
+                json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "yaw", 4));
+                json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "pitch", 5));
+
+                json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "leftArmX", 6));
+                json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "leftArmY", 7));
+                json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "leftArmZ", 8));
+                json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "rightArmX", 9));
+                json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "rightArmY", 10));
+                json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "rightArmZ", 11));
+
+                json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "leftLegX", 12));
+                json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "leftLegY", 13));
+                json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "leftLegZ", 14));
+                json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "rightLegX", 15));
+                json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "rightLegY", 16));
+                json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "rightLegZ", 17));
+
+                json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "bodyX", 18));
+                json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "bodyY", 19));
+                json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "bodyZ", 20));
+
+                json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "headX", 21));
+                json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "headY", 22));
+                json.frame_list = json.frame_list.concat(makeDoubleFrames(data, "headZ", 23));
             }
         }
-        console.log(json);
+        // console.log(json);
         download(JSON.stringify(json, null, 2), controllers[i].filename, "text/plain");
     }
 }
@@ -294,29 +223,64 @@ function createActor(event) {
         "frame_list": [
             {
                 "time": 0,
-                "type": 6,
+                "type": 8,
                 "data": {
-                    "x": camera.position.x,
-                    "y": camera.position.y,
-                    "z": camera.position.z,
-                    "yaw": 0,
-                    "pitch": 0,
-                    "is_teleport": true
+                    "value": camera.position.x,
+                    "type": 1
+                }
+            },
+            {
+                "time": 0,
+                "type": 8,
+                "data": {
+                    "value": camera.position.y,
+                    "type": 2
+                }
+            },
+            {
+                "time": 0,
+                "type": 8,
+                "data": {
+                    "value": camera.position.z,
+                    "type": 3
+                }
+            },
+            {
+                "time": 0,
+                "type": 8,
+                "data": {
+                    "value": 0,
+                    "type": 4
+                }
+            },
+            {
+                "time": 0,
+                "type": 8,
+                "data": {
+                    "value": 0,
+                    "type": 5
                 }
             }
         ]
     };
-    addJsonActor(jsonContents, "actor" + id++);
+    addJsonActor(jsonContents, "actor" + id);
 }
 
 function addJsonActor(jsonContents, name) {
+    // console.log("addJsonActor");
     jsonContents.frame_list = jsonContents.frame_list.sort(function (a, b) {
         return a.time - b.time;
-    })
+    });
     var timelineData = [];
+    // console.log(jsonContents);
     for (var i = 0; i < controllers.length; i++) {
+        // console.group();
+        // console.log(controllers[i].getTimelineData());
+        // console.log(JSON.parse(JSON.stringify(controllers[i].getTimelineData())));
+        // console.groupEnd();
         timelineData.push(JSON.parse(JSON.stringify(controllers[i].getTimelineData())));
     }
+    // console.log(timelineData);
     var armorStand = new ArmorStand(scene);
     var controller = new ArmorStandController(armorStand);
     var loader = new JsonDataFactory(jsonContents, controller, name);
@@ -493,38 +457,70 @@ function render() {
     renderer.render(scene, camera);
 }
 
+function addFrame(frameMap, type, frame) {
+    var frames = frameMap[type];
+    if (frames == null)
+        frames = [];
+    frames.push(frame);
+    frameMap[type] = frames;
+    return frameMap;
+}
+
 class JsonDataFactory {
     constructor(jsonData, controller, fileName) {
-        this.positionFrames = [];
-        this.leftArmFrames = [];
-        this.rightArmFrames = [];
-        this.leftLegFrames = [];
-        this.rightLegFrames = [];
-        this.bodyFrames = [];
-        this.headFrames = [];
+        this.frames = {};
 
         controller.originalJson = jsonData;
         this.durationInMs = jsonData.target_duration;
         for (var i = 0; i < jsonData.frame_list.length; i++) {
             var frame = jsonData.frame_list[i];
             var data = frame.data;
+
             if (frame.type == 4) {
                 this.durationInMs = Math.max(this.durationInMs, frame.time);
                 if (data.type == 1) {
-                    this.leftArmFrames.push(frame);
+                    addFrame(this.frames, 6, makeSingleDoubleFrame(frame, "x", 6));
+                    addFrame(this.frames, 7, makeSingleDoubleFrame(frame, "y", 7));
+                    addFrame(this.frames, 8, makeSingleDoubleFrame(frame, "z", 8));
+                    // this.leftArmFrames.push(frame);
                 } else if (data.type == 2) {
-                    this.rightArmFrames.push(frame);
+                    addFrame(this.frames, 9, makeSingleDoubleFrame(frame, "x", 9));
+                    addFrame(this.frames, 10, makeSingleDoubleFrame(frame, "y", 10));
+                    addFrame(this.frames, 11, makeSingleDoubleFrame(frame, "z", 11));
+                    // this.rightArmFrames.push(frame);
                 } else if (data.type == 3) {
-                    this.leftLegFrames.push(frame);
+                    addFrame(this.frames, 12, makeSingleDoubleFrame(frame, "x", 12));
+                    addFrame(this.frames, 13, makeSingleDoubleFrame(frame, "y", 13));
+                    addFrame(this.frames, 14, makeSingleDoubleFrame(frame, "z", 14));
+                    // this.leftLegFrames.push(frame);
                 } else if (data.type == 4) {
-                    this.rightLegFrames.push(frame);
+                    addFrame(this.frames, 15, makeSingleDoubleFrame(frame, "x", 15));
+                    addFrame(this.frames, 16, makeSingleDoubleFrame(frame, "y", 16));
+                    addFrame(this.frames, 17, makeSingleDoubleFrame(frame, "z", 17));
+                    // this.rightLegFrames.push(frame);
                 } else if (data.type == 5) {
-                    this.bodyFrames.push(frame);
+                    addFrame(this.frames, 18, makeSingleDoubleFrame(frame, "x", 18));
+                    addFrame(this.frames, 19, makeSingleDoubleFrame(frame, "y", 19));
+                    addFrame(this.frames, 20, makeSingleDoubleFrame(frame, "z", 20));
+                    // this.bodyFrames.push(frame);
                 } else if (data.type == 6) {
-                    this.headFrames.push(frame);
+                    addFrame(this.frames, 21, makeSingleDoubleFrame(frame, "x", 21));
+                    addFrame(this.frames, 22, makeSingleDoubleFrame(frame, "y", 22));
+                    addFrame(this.frames, 23, makeSingleDoubleFrame(frame, "z", 23));
+                    // this.headFrames.push(frame);
                 }
             } else if (frame.type == 6) {
-                this.positionFrames.push(frame);
+                addFrame(this.frames, 1, makeSingleDoubleFrame(frame, "x", 1));
+                addFrame(this.frames, 2, makeSingleDoubleFrame(frame, "y", 2));
+                addFrame(this.frames, 3, makeSingleDoubleFrame(frame, "z", 3));
+                addFrame(this.frames, 4, makeSingleDoubleFrame(frame, "yaw", 4));
+                addFrame(this.frames, 5, makeSingleDoubleFrame(frame, "pitch", 5));
+            } else if (frame.type == 8) {
+                var frames = this.frames[data.type];
+                if (frames == null)
+                    frames = [];
+                frames.push(frame);
+                this.frames[data.type] = frames;
             }
         }
 
@@ -533,35 +529,37 @@ class JsonDataFactory {
         data.type = "armorstand";
         data.label = fileName + " (" + data.id + ")";
         data.properties = [];
-        data.properties.push(JsonDataFactory.generateProperty("posX", this.positionFrames, "x"));
-        data.properties.push(JsonDataFactory.generateProperty("posY", this.positionFrames, "y"));
-        data.properties.push(JsonDataFactory.generateProperty("posZ", this.positionFrames, "z"));
-        data.properties.push(JsonDataFactory.generateProperty("posYaw", this.positionFrames, "yaw"));
-        data.properties.push(JsonDataFactory.generateProperty("posPitch", this.positionFrames, "pitch"));
+        console.log(this.frames);
+        JsonDataFactory.generateProperty(data, "posX", this.frames[1], "value");
+        JsonDataFactory.generateProperty(data, "posY", this.frames[2], "value");
+        JsonDataFactory.generateProperty(data, "posZ", this.frames[3], "value");
+        JsonDataFactory.generateProperty(data, "yaw", this.frames[4], "value");
+        JsonDataFactory.generateProperty(data, "pitch", this.frames[5], "value");
 
-        data.properties.push(JsonDataFactory.generateProperty("leftArmX", this.leftArmFrames, "x"));
-        data.properties.push(JsonDataFactory.generateProperty("leftArmY", this.leftArmFrames, "y"));
-        data.properties.push(JsonDataFactory.generateProperty("leftArmZ", this.leftArmFrames, "z"));
+        JsonDataFactory.generateProperty(data, "leftArmX", this.frames[6], "value");
+        JsonDataFactory.generateProperty(data, "leftArmY", this.frames[7], "value");
+        JsonDataFactory.generateProperty(data, "leftArmZ", this.frames[8], "value");
 
-        data.properties.push(JsonDataFactory.generateProperty("rightArmX", this.rightArmFrames, "x"));
-        data.properties.push(JsonDataFactory.generateProperty("rightArmY", this.rightArmFrames, "y"));
-        data.properties.push(JsonDataFactory.generateProperty("rightArmZ", this.rightArmFrames, "z"));
+        JsonDataFactory.generateProperty(data, "rightArmX", this.frames[9], "value");
+        JsonDataFactory.generateProperty(data, "rightArmY", this.frames[10], "value");
+        JsonDataFactory.generateProperty(data, "rightArmZ", this.frames[11], "value");
 
-        data.properties.push(JsonDataFactory.generateProperty("leftLegX", this.leftLegFrames, "x"));
-        data.properties.push(JsonDataFactory.generateProperty("leftLegY", this.leftLegFrames, "y"));
-        data.properties.push(JsonDataFactory.generateProperty("leftLegZ", this.leftLegFrames, "z"));
+        JsonDataFactory.generateProperty(data, "leftLegX", this.frames[12], "value");
+        JsonDataFactory.generateProperty(data, "leftLegY", this.frames[13], "value");
+        JsonDataFactory.generateProperty(data, "leftLegZ", this.frames[14], "value");
 
-        data.properties.push(JsonDataFactory.generateProperty("rightLegX", this.rightLegFrames, "x"));
-        data.properties.push(JsonDataFactory.generateProperty("rightLegY", this.rightLegFrames, "y"));
-        data.properties.push(JsonDataFactory.generateProperty("rightLegZ", this.rightLegFrames, "z"));
+        JsonDataFactory.generateProperty(data, "rightLegX", this.frames[15], "value");
+        JsonDataFactory.generateProperty(data, "rightLegY", this.frames[16], "value");
+        JsonDataFactory.generateProperty(data, "rightLegZ", this.frames[17], "value");
 
-        data.properties.push(JsonDataFactory.generateProperty("bodyX", this.bodyFrames, "x"));
-        data.properties.push(JsonDataFactory.generateProperty("bodyY", this.bodyFrames, "y"));
-        data.properties.push(JsonDataFactory.generateProperty("bodyZ", this.bodyFrames, "z"));
+        JsonDataFactory.generateProperty(data, "bodyX", this.frames[18], "value");
+        JsonDataFactory.generateProperty(data, "bodyY", this.frames[19], "value");
+        JsonDataFactory.generateProperty(data, "bodyZ", this.frames[20], "value");
 
-        data.properties.push(JsonDataFactory.generateProperty("headX", this.headFrames, "x"));
-        data.properties.push(JsonDataFactory.generateProperty("headY", this.headFrames, "y"));
-        data.properties.push(JsonDataFactory.generateProperty("headZ", this.headFrames, "z"));
+        JsonDataFactory.generateProperty(data, "headX", this.frames[21], "value");
+        JsonDataFactory.generateProperty(data, "headY", this.frames[22], "value");
+        JsonDataFactory.generateProperty(data, "headZ", this.frames[23], "value");
+        console.log(data);
         this.timelineData = data;
     }
 
@@ -569,18 +567,27 @@ class JsonDataFactory {
         return this.timelineData;
     }
 
-    static generateProperty(name, keys, property) {
+    static generateProperty(data, name, keys, property) {
         var ret = {};
         ret.name = name;
         ret.keys = [];
         ret.val = 0;
-        for (var i = 0; i < keys.length; i++) {
+        if (keys != null && keys.length > 0) {
+            for (var i = 0; i < keys.length; i++) {
+                var key = {};
+                key.time = keys[i].time / 1000.0;
+                key.val = keys[i].data[property];
+                key.ease = "Linear.easeNone";
+                ret.keys.push(key);
+            }
+        } else {
             var key = {};
-            key.time = keys[i].time / 1000.0;
-            key.val = keys[i].data[property];
+            key.time = 0;
+            key.val = 0;
             key.ease = "Linear.easeNone";
             ret.keys.push(key);
         }
+        data.properties.push(ret);
         return ret;
     };
 }
@@ -642,7 +649,7 @@ class ArmorStandController extends NpcController {
         this.armorstand.position().x = this.values.posX;
         this.armorstand.position().y = this.values.posY;
         this.armorstand.position().z = this.values.posZ;
-        this.armorstand.yaw().y = DEG2RAD * -this.values.posYaw;
+        this.armorstand.yaw().y = DEG2RAD * -this.values.yaw;
 
         this.armorstand.leftLeg.x = this.values.leftLegX;
         this.armorstand.leftLeg.y = this.values.leftLegY;

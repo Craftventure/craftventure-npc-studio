@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="059228c1-c1dd-4842-bc69-9b4268e485fe" name="Default" comment="" />
+    <list default="true" id="059228c1-c1dd-4842-bc69-9b4268e485fe" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
+    </list>
     <ignored path="cvanimator.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -22,91 +26,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3604">
-              <caret line="212" column="0" selection-start-line="212" selection-start-column="0" selection-end-line="219" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jsonstudio/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="schema_script.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jsonstudio/js/schema_script.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1428">
-              <caret line="84" column="17" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="schema_action.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jsonstudio/js/schema_action.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1887">
-              <caret line="111" column="30" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="schema_particle_path.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jsonstudio/js/schema_particle_path.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="95" column="37" selection-start-line="95" selection-start-column="37" selection-end-line="95" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="590">
-              <caret line="50" column="68" selection-start-line="50" selection-start-column="68" selection-end-line="52" selection-end-column="82" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="schema_actor.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jsonstudio/js/schema_actor.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
+            <state relative-caret-position="391">
+              <caret line="187" column="70" selection-start-line="187" selection-start-column="70" selection-end-line="187" selection-end-column="70" />
               <folding>
-                <element signature="n#!!block;n#preferred_type#0;n#!!block;n#properties#0;n#!!block;n#schemaActor#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#target_duration#0;n#!!block;n#properties#0;n#!!block;n#schemaActor#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#replay#0;n#!!block;n#properties#0;n#!!block;n#schemaActor#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#equipment#0;n#!!block;n#properties#0;n#!!block;n#schemaActor#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#update_tick#0;n#!!block;n#properties#0;n#!!block;n#schemaActor#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jsonstudio/js/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1598">
-              <caret line="155" column="41" selection-start-line="155" selection-start-column="41" selection-end-line="155" selection-end-column="41" />
-              <folding>
-                <element signature="e#2762#2777#0" expanded="false" />
-                <marker date="1473105024392" expanded="true" signature="1147:1188" placeholder="..." />
-                <marker date="1473105024392" expanded="true" signature="1173:1187" placeholder="..." />
+                <element signature="n#!!block;n#makeSingleDoubleFrame#0" expanded="false" />
+                <element signature="n#!!block;n#makeDoubleFrames#0" expanded="false" />
+                <element signature="n#!!block;n#download#0" expanded="false" />
+                <element signature="n#!!block;n#createActor#0" expanded="false" />
+                <element signature="n#!!block;n#loadModel#0" expanded="false" />
+                <element signature="n#!!block;n#onWindowResize#0" expanded="false" />
+                <element signature="n#!!block;n#setup#0" expanded="false" />
+                <element signature="n#!!block;n#centerCam#0" expanded="false" />
+                <element signature="n#!!block;n#render#0" expanded="false" />
+                <element signature="n#ArmorStandController#0" expanded="false" />
+                <element signature="n#ControllerTarget#0" expanded="false" />
+                <element signature="n#ArmorStand#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -123,6 +60,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -131,7 +71,6 @@
         <option value="$PROJECT_DIR$/js/MTLLoader.js" />
         <option value="$PROJECT_DIR$/../backup/cvanimator/js/main.js" />
         <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/schema_particle_path.json.js" />
         <option value="$PROJECT_DIR$/js/schema_particle_path.json.json" />
@@ -146,6 +85,7 @@
         <option value="$PROJECT_DIR$/jsonstudio/js/schema_actor.js" />
         <option value="$PROJECT_DIR$/jsonstudio/js/schema_script.js" />
         <option value="$PROJECT_DIR$/jsonstudio/js/schema_particle_path.js" />
+        <option value="$PROJECT_DIR$/js/main.js" />
       </list>
     </option>
   </component>
@@ -171,7 +111,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -189,51 +129,31 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="cvanimator" />
+              <option name="myItemId" value="cv-npc-studio" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="cvanimator" />
+              <option name="myItemId" value="cv-npc-studio" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="cvanimator" />
+              <option name="myItemId" value="cv-npc-studio" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="cvanimator" />
+              <option name="myItemId" value="cv-npc-studio" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="cvanimator" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsonstudio" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cvanimator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cvanimator" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsonstudio" />
+              <option name="myItemId" value="cv-npc-studio" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -243,16 +163,19 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -262,7 +185,10 @@
       <recent name="C:\xampp\htdocs\cvanimator\jsonstudio\js" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Chromium Remote.Debug">
+    <configuration default="true" type="ChromiumRemoteDebugType" factoryName="Chromium Remote">
+      <method />
+    </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
@@ -293,6 +219,12 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="false" name="Debug" type="ChromiumRemoteDebugType" factoryName="Chromium Remote" port="63342">
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Chromium Remote.Debug" />
+    </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -342,20 +274,24 @@
       <workItem from="1473924121695" duration="18000" />
       <workItem from="1473958194986" duration="4008000" />
       <workItem from="1474052810094" duration="601000" />
+      <workItem from="1478037598051" duration="3276000" />
+      <workItem from="1478106603396" duration="13754000" />
+      <workItem from="1478189532756" duration="4693000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169899000" />
+    <option name="totallyTimeSpent" value="191622000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15778251" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16257995" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -367,9 +303,8 @@
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997833" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -405,7 +340,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -429,7 +364,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#makeSingleDoubleFrame#0" expanded="false" />
+            <element signature="n#!!block;n#makeDoubleFrames#0" expanded="false" />
+            <element signature="n#!!block;n#download#0" expanded="false" />
+            <element signature="n#!!block;n#createActor#0" expanded="false" />
+            <element signature="n#!!block;n#loadModel#0" expanded="false" />
+            <element signature="n#!!block;n#onWindowResize#0" expanded="false" />
+            <element signature="n#!!block;n#setup#0" expanded="false" />
+            <element signature="n#!!block;n#centerCam#0" expanded="false" />
+            <element signature="n#!!block;n#render#0" expanded="false" />
+            <element signature="n#ArmorStandController#0" expanded="false" />
+            <element signature="n#ControllerTarget#0" expanded="false" />
+            <element signature="n#ArmorStand#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -445,74 +393,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#makeSingleDoubleFrame#0" expanded="false" />
+            <element signature="n#!!block;n#makeDoubleFrames#0" expanded="false" />
+            <element signature="n#!!block;n#download#0" expanded="false" />
+            <element signature="n#!!block;n#createActor#0" expanded="false" />
+            <element signature="n#!!block;n#loadModel#0" expanded="false" />
+            <element signature="n#!!block;n#onWindowResize#0" expanded="false" />
+            <element signature="n#!!block;n#setup#0" expanded="false" />
+            <element signature="n#!!block;n#centerCam#0" expanded="false" />
+            <element signature="n#!!block;n#render#0" expanded="false" />
+            <element signature="n#ArmorStandController#0" expanded="false" />
+            <element signature="n#ControllerTarget#0" expanded="false" />
+            <element signature="n#ArmorStand#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style/style.css" />
-    <entry file="file://$PROJECT_DIR$/../craftventure/audio/js/audiomanager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../craftventure/audio/js/packets.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../craftventure/audio/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1179">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://I:/MCBackups/Craftventure 2 Testservers/Craftventure Main/plugins/CraftventureCore/script/frames/fenrir_pre2_statue_l2.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://I:/MCBackups/Craftventure 2 Testservers/Craftventure Main/plugins/CraftventureCore/script/frames/fenrir_pre2_statue_l3.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="24" selection-start-line="0" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://I:/MCBackups/Craftventure 2 Testservers/Craftventure Main/plugins/CraftventureCore/script/frames/fenrir_pre2_statue_r1.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://I:/MCBackups/Craftventure 2 Testservers/Craftventure Main/plugins/CraftventureCore/script/frames/fenrir_pre2_statue_r2.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="17" selection-start-line="0" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://I:/MCBackups/Craftventure 2 Testservers/Craftventure Main/plugins/CraftventureCore/script/frames/fenrir_pre2_statue_r3.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="16" selection-start-line="0" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://I:/MCBackups/Craftventure 2 Testservers/Craftventure Main/plugins/CraftventureCore/script/frames/fenrir_pre1_hoorn_man.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../craftventure/audio/js/audiomanager.js" />
+    <entry file="file://$PROJECT_DIR$/../craftventure/audio/js/packets.js" />
+    <entry file="file://$PROJECT_DIR$/../craftventure/audio/js/main.js" />
+    <entry file="file://I:/MCBackups/Craftventure 2 Testservers/Craftventure Main/plugins/CraftventureCore/script/frames/fenrir_pre2_statue_l2.json" />
+    <entry file="file://I:/MCBackups/Craftventure 2 Testservers/Craftventure Main/plugins/CraftventureCore/script/frames/fenrir_pre2_statue_l3.json" />
+    <entry file="file://I:/MCBackups/Craftventure 2 Testservers/Craftventure Main/plugins/CraftventureCore/script/frames/fenrir_pre2_statue_r1.json" />
+    <entry file="file://I:/MCBackups/Craftventure 2 Testservers/Craftventure Main/plugins/CraftventureCore/script/frames/fenrir_pre2_statue_r2.json" />
+    <entry file="file://I:/MCBackups/Craftventure 2 Testservers/Craftventure Main/plugins/CraftventureCore/script/frames/fenrir_pre2_statue_r3.json" />
+    <entry file="file://I:/MCBackups/Craftventure 2 Testservers/Craftventure Main/plugins/CraftventureCore/script/frames/fenrir_pre1_hoorn_man.json" />
     <entry file="file://I:/MCBackups/Craftventure 2 Testservers/Craftventure Main/plugins/CraftventureCore/script/ride_rapid_village.json" />
     <entry file="file://$PROJECT_DIR$/js/three.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -557,13 +464,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../backup/cvanimator/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="270" column="0" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../backup/cvanimator/js/main.js" />
     <entry file="file://$PROJECT_DIR$/js/THREEx.KeyboardState.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -662,92 +563,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://I:/MCBackups/Craftventure 2 Testservers/Craftventure Main/plugins/CraftventureCore/script/frames/fenrir_pre2_statue_l1.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="44" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="44" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://I:/MCBackups/Craftventure 2 Testservers/Craftventure Main/plugins/CraftventureCore/script/frames/fenrir_pre2_statue_l1.json" />
     <entry file="file://$PROJECT_DIR$/jsonstudio/js/schema_particle_path.json.json" />
-    <entry file="file://$PROJECT_DIR$/jsonstudio/js/jsoneditor.min.js">
+    <entry file="file://$PROJECT_DIR$/jsonstudio/js/jsoneditor.min.js" />
+    <entry file="file://$PROJECT_DIR$/jsonstudio/index.html" />
+    <entry file="file://$PROJECT_DIR$/jsonstudio/js/schema_action.js" />
+    <entry file="file://$PROJECT_DIR$/jsonstudio/js/main.js" />
+    <entry file="file://$PROJECT_DIR$/jsonstudio/js/schema_actor.js" />
+    <entry file="file://$PROJECT_DIR$/jsonstudio/js/schema_script.js" />
+    <entry file="file://$PROJECT_DIR$/jsonstudio/js/schema_particle_path.js" />
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="271" column="321" selection-start-line="271" selection-start-column="321" selection-end-line="271" selection-end-column="321" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jsonstudio/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+        <state relative-caret-position="466">
+          <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3604">
-          <caret line="212" column="0" selection-start-line="212" selection-start-column="0" selection-end-line="219" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jsonstudio/js/schema_action.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1887">
-          <caret line="111" column="30" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jsonstudio/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1598">
-          <caret line="155" column="41" selection-start-line="155" selection-start-column="41" selection-end-line="155" selection-end-column="41" />
+        <state relative-caret-position="391">
+          <caret line="187" column="70" selection-start-line="187" selection-start-column="70" selection-end-line="187" selection-end-column="70" />
           <folding>
-            <element signature="e#2762#2777#0" expanded="false" />
-            <marker date="1473105024392" expanded="true" signature="1147:1188" placeholder="..." />
-            <marker date="1473105024392" expanded="true" signature="1173:1187" placeholder="..." />
+            <element signature="n#!!block;n#makeSingleDoubleFrame#0" expanded="false" />
+            <element signature="n#!!block;n#makeDoubleFrames#0" expanded="false" />
+            <element signature="n#!!block;n#download#0" expanded="false" />
+            <element signature="n#!!block;n#createActor#0" expanded="false" />
+            <element signature="n#!!block;n#loadModel#0" expanded="false" />
+            <element signature="n#!!block;n#onWindowResize#0" expanded="false" />
+            <element signature="n#!!block;n#setup#0" expanded="false" />
+            <element signature="n#!!block;n#centerCam#0" expanded="false" />
+            <element signature="n#!!block;n#render#0" expanded="false" />
+            <element signature="n#ArmorStandController#0" expanded="false" />
+            <element signature="n#ControllerTarget#0" expanded="false" />
+            <element signature="n#ArmorStand#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jsonstudio/js/schema_actor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
-          <folding>
-            <element signature="n#!!block;n#preferred_type#0;n#!!block;n#properties#0;n#!!block;n#schemaActor#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#target_duration#0;n#!!block;n#properties#0;n#!!block;n#schemaActor#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#replay#0;n#!!block;n#properties#0;n#!!block;n#schemaActor#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#equipment#0;n#!!block;n#properties#0;n#!!block;n#schemaActor#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#update_tick#0;n#!!block;n#properties#0;n#!!block;n#schemaActor#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jsonstudio/js/schema_script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="84" column="17" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jsonstudio/js/schema_particle_path.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="95" column="37" selection-start-line="95" selection-start-column="37" selection-end-line="95" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="50" column="68" selection-start-line="50" selection-start-column="68" selection-end-line="52" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
